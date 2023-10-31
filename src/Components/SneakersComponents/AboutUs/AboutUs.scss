@@ -1,0 +1,110 @@
+.AboutUs-container {
+    max-width: 1100px;
+    margin: 50px auto;
+
+
+    .AboutUs-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+
+      .AboutUs-text {
+          width: 550px;
+          height: auto;
+          h3 {
+              font-size: 26px;
+              color: #0A8E95;
+              text-transform: uppercase;
+              margin-bottom: -20px;
+          }
+
+          h1 {
+              color: white;
+              font-weight: bold;
+              font-size: 56px;
+              font-style: italic;
+              text-transform: uppercase;
+
+          }
+          #orange  {
+              color: orangered;
+              font-size: 75px;
+          }
+
+          p{
+              color: rgb(133, 132, 132);
+              margin-top: -20px;
+              font-size: 18px;
+              text-transform: uppercase;
+          }
+
+          .AboutUs-button {
+              background-color: #0A8E95;
+              color: white;
+              width: 120px;
+              height: 40px;
+              text-transform: uppercase;
+              border-radius: 5px;
+              margin-top: 10px;
+              margin-right: 10px;
+              transition: background-color 0.3s ease;
+          }
+
+          .AboutUs-button:hover {
+            background-color: #07767c;
+          }
+
+          .another {
+            color: white;
+            width: 120px;
+            height: 40px;
+            text-transform: uppercase;
+            border-radius: 5px;
+            margin-top: 10px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .another:hover {
+            color: #0A8E95;
+            text-decoration: underline;
+        }
+
+      }
+
+      .AboutUs-img {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .About-img {
+              max-width: 600px;
+              height: auto;
+              transform: rotateX(30deg);
+          }
+      }
+
+    }
+
+    @media (max-width: 768px) {
+        .AboutUs-text {
+          width: 100%;
+          text-align: center;
+        }
+      }
+
+
+      @media (min-width: 769px) and (max-width: 1024px) {
+        .AboutUs-text {
+          width: 100%;
+        }
+      }
+
+
+      @media (min-width: 1025px) {
+        .AboutUs-text {
+          width: 550px;
+        }
+      }
+    }

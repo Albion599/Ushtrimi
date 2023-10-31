@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // Corrected the import statement
+import SneakPage from "./Pages/SneakPeak/SneakPeak";
+import ShopAll from "./Pages/ShopAll/ShopAll";
+import SinglePage from "./Pages/SinglePage/SinglePage";
+import Products from "./Context/Products";
+import PrivateRoute from "./Utils/PrivateRoute";
+import { checkUser } from "./Utils/functions";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Products>
+        <Routes>
+          <Route path="/" element={<SneakPage />} />
+          <Route path="/shopall" element={<ShopAll />} />
+          <Route
+            path="/dashboard"
+            element={
+              <PrivateRoute secretkey={checkUser()}>
+                <h1>dashboard</h1>
+              </PrivateRoute>
+            }
+          />
+
+          <Route path="/singlepage/:productId" element={<SinglePage />} />
+        </Routes>
+      </Products>
+    </Router>
   );
 }
 
